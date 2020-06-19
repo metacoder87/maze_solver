@@ -130,6 +130,7 @@ class Maze
     def right?
         free_space.include?([$x, $y.to_i + 1])
     end
+
     def move_left
         $y -= 1
         take_step
@@ -138,3 +139,25 @@ class Maze
     def left?
         free_space.include?([$x, $y.to_i - 1])
     end
+
+    def path_finder
+        if dead_end?
+            puts "You are trapped forever in an inescapable labyrinth.\n
+                    These things happen to Minotaurs sometimes."
+        else
+            while [$x, $y] != end_space
+                if up?
+                    move_up
+                elsif right?
+                    move_right
+                elsif down?
+                    move_down
+                elsif left?
+                    move_left
+                end
+            end
+        end
+    end
+
+end
+
