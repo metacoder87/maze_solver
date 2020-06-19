@@ -32,7 +32,18 @@
                     # *S   *   XXXX  *
                     # ****************
 
-            # If there is no such path, it should inform the user.
+            # If there is no such path, 
+            
+                    # ****************
+                    # *         *   *E
+                    # *    *    *  ***
+                    # *    *    *    *
+                    # *    *    *    *
+                    # *    *    *    *
+                    # *S   *         *
+                    # ****************
+
+            # it should inform the user.
 
     # Make your program run as a command line script, taking in the name of a 
     # maze file on the command line.
