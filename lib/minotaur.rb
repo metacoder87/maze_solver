@@ -89,3 +89,11 @@ class Maze
             else true
             end
     end
+
+
+    def take_step
+        if @grid[$x][$y] != "E"
+            @grid[$x][$y] = "X"
+        else end_reached
+        end
+    end
