@@ -97,3 +97,9 @@ class Maze
         else end_reached
         end
     end
+
+    def end_reached
+        solution = @grid.each { |line| puts line.join("") }
+        solution
+        puts "You have escaped the Labyrinth!\n You are free, Minotaur!"
+    end
