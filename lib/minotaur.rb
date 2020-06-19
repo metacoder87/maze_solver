@@ -109,9 +109,17 @@ class Maze
         take_step
     end
 
+    def up?
+        free_space.include?([$x.to_i - 1, $y])
+    end
+
     def move_down
         $x += 1
         take_step
+    end
+
+    def down?
+        free_space.include?([$x.to_i + 1, $y])
     end
 
     def move_right
@@ -119,7 +127,14 @@ class Maze
         take_step
     end
 
+    def right?
+        free_space.include?([$x, $y.to_i + 1])
+    end
     def move_left
         $y -= 1
         take_step
+    end
+
+    def left?
+        free_space.include?([$x, $y.to_i - 1])
     end
