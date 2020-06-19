@@ -59,3 +59,17 @@ class Maze
         end
         location
     end
+
+    def end_space
+        location = []
+        @grid.each_with_index do |row, idx|
+            row.each_with_index do |col, i|
+                if @grid[idx][i] == "E"
+                    location << idx
+                    location << i
+                end
+            end
+        end
+        location
+    end
+
