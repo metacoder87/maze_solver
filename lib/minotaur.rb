@@ -16,6 +16,15 @@ class Maze
         end
     end
 
+    def gets_maze
+        puts "Enter the name of a text file containing a maze, and prepare to be amazed!"
+        maze = gets.chomp.to_s
+            if maze.include?(".txt")
+                maze
+            else maze + ".txt"
+            end
+    end
+
     def empty?(location)
         if @grid[location[0]][location[1]] == " "
             true
