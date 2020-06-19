@@ -45,3 +45,17 @@ class Maze
         spaces
     end
 
+    def start_space
+        location = []
+        @grid.each_with_index do |row, idx|
+            row.each_with_index do |col, i|
+                if @grid[idx][i] == "S"
+                    location << idx
+                    location << i
+                end
+            end
+            $x = location[0]
+            $y = location[1]
+        end
+        location
+    end
