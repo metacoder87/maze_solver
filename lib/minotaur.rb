@@ -161,3 +161,8 @@ class Maze
 
 end
 
+escape_artist = Maze.new
+puts "Starting space is #{escape_artist.start_space}"
+puts "Ending space is #{escape_artist.end_space}"
+escape_artist.path_finder
+
