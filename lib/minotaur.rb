@@ -22,3 +22,17 @@ class Maze
         else false
         end
     end
+
+    def free_space
+        spaces = []
+        @grid.each_with_index do |row, idx|
+            row.each_with_index do |col, i|
+                location = [idx, i]
+                if empty?(location) || @grid[location[0]][location[1]] == "E"
+                    spaces << location
+                end
+            end
+        end
+        spaces
+    end
+
