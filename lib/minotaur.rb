@@ -73,3 +73,19 @@ class Maze
         location
     end
 
+    def dead_end?
+        over = [end_space[0] - 1, end_space[1]]
+        under = [end_space[0] + 1, end_space[1]]
+        left = [end_space[0], end_space[1] - 1]
+        right = [end_space[0], end_space[1] + 1]
+            if free_space.include?(over)
+                false
+            elsif free_space.include?(under)
+                false
+            elsif free_space.include?(left)
+                false
+            elsif free_space.include?(right)
+                false
+            else true
+            end
+    end
