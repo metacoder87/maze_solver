@@ -15,3 +15,10 @@ class Maze
             puts line
         end
     end
+
+    def empty?(location)
+        if @grid[location[0]][location[1]] == " "
+            true
+        else false
+        end
+    end
