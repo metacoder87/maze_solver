@@ -103,3 +103,23 @@ class Maze
         solution
         puts "You have escaped the Labyrinth!\n You are free, Minotaur!"
     end
+
+    def move_up
+        $x -= 1
+        take_step
+    end
+
+    def move_down
+        $x += 1
+        take_step
+    end
+
+    def move_right
+        $y += 1
+        take_step
+    end
+
+    def move_left
+        $y -= 1
+        take_step
+    end
