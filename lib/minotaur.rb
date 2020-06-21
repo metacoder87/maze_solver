@@ -102,9 +102,14 @@ class Maze
         end
     end
 
+    # Prints out the maze with whatever moves have been made
+    def print
+        @grid.each { |line| puts line.join("") }
+    end
+
+    # Signals the end of the maze has been found
     def end_reached
-        solution = @grid.each { |line| puts line.join("") }
-        solution
+        print
         puts "You have escaped the Labyrinth!\n You are free, Minotaur!"
     end
 
