@@ -76,3 +76,9 @@ describe "Maze" do
             end
         end
 
+        describe "#take_step" do
+            it "should place an X on each chosen step" do
+                expect(maze.take_step).to eq("X")
+            end
+        end
+
