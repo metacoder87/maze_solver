@@ -102,3 +102,17 @@ describe "Maze" do
                 # grid.each { |line| puts line.join('') }
             end
         end
+
+        describe "#move_right" do
+            it "should place an X on the space to the right of the S or last X" do
+                grid = maze.instance_variable_get(:@grid)
+                maze.move_right
+                expect(grid[3][2]).to eq("X")
+                maze.move_right
+                expect(grid[3][3]).to eq("X")
+                maze.move_right
+                expect(grid[3][4]).to eq("X")
+                # grid.each { |line| puts line.join('') }
+            end
+        end
+
