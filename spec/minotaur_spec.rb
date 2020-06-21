@@ -58,3 +58,10 @@ describe "Maze" do
                 expect(maze.start_space).to eq([6,1])
             end
         end
+
+        describe "#end_space" do
+            it "should return the location of the exit 'E'" do
+                expect(maze.end_space).to eq([1,14])
+            end
+        end
+
