@@ -149,7 +149,12 @@ class Maze
         free_space.include?([$x, $y.to_i - 1])
     end
 
+    # Escapes the maze if it can be done.
+        # remove the # blocking out the print statements below to see the path unfold
     def path_finder
+        print
+        puts "Starting space is #{start_space}"
+        puts "Ending space is #{end_space}"
         if dead_end?
             puts "You are trapped forever in an inescapable labyrinth.\n
                     These things happen to Minotaurs sometimes."
@@ -157,12 +162,16 @@ class Maze
             while [$x, $y] != end_space
                 if up?
                     move_up
+                    # print
                 elsif right?
                     move_right
+                    # print
                 elsif down?
                     move_down
+                    # print
                 elsif left?
                     move_left
+                    # print
                 end
             end
         end
