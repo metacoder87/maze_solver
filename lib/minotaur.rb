@@ -179,38 +179,20 @@ class Maze
 
 end
 
-escape_artist = Maze.new
-puts "Starting space is #{escape_artist.start_space}"
-puts "Ending space is #{escape_artist.end_space}"
-escape_artist.path_finder
 
-#tests that functioned before adding gets_maze
+# Tests (comment out for less clutter in the RSPEC results)
 
-# escape = Maze.new('maze.txt')
+# solvable
+Maze.new('maze.txt').path_finder
 
-# puts "Starting space is #{escape.start_space}"
-# puts "Ending space is #{escape.end_space}"
-# escape.path_finder
+Maze.new('labyrinth.txt').path_finder
+# inescapable
+Maze.new('trap.txt').path_finder
 
-# egress = Maze.new('labyrinth.txt')
+Maze.new('tartarus.txt').path_finder
 
-# puts "Starting space is #{egress.start_space}"
-# puts "Ending space is #{egress.end_space}"
-# egress.path_finder
-
-
-# stuck = Maze.new('trap.txt')
-
-# puts "Starting space is #{stuck.start_space}"
-# puts "Ending space is #{stuck.end_space}"
-# stuck.path_finder
-
-
-# tartarus = Maze.new('minos_trap.txt')
-
-# puts "Starting space is #{tartarus.start_space}"
-# puts "Ending space is #{tartarus.end_space}"
-# tartarus.path_finder
+# pick your own maze on the cmd line
+Maze.new.path_finder
 
 
             # meta_coder (Gary Miller) =)
