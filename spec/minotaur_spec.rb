@@ -164,3 +164,16 @@ describe "Maze" do
             end
         end
 
+        describe "#left?" do
+            it "should return true if the space to the left is free" do
+                maze.move_right
+                maze.move_up
+                expect(maze.left?).to be(true)
+            end
+
+            it "should return false if the space to the left is not free" do
+                maze.start_space
+                expect(maze.left?).to be(false)
+            end
+        end
+
