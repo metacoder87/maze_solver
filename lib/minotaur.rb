@@ -6,13 +6,15 @@
 class Maze
 
     attr_reader :grid
-
-    def initialize
-        @maze = gets_maze
+    # reads the maze file and creates the grid array for easy solving
+    def initialize(*maze)
+        unless maze[0]
+            @maze = gets_maze
+        else @maze = maze[0]
+        end
         @grid = []
         IO.readlines(@maze).each do |line|
             @grid << line.chomp.split('')
-            puts line
         end
     end
 
