@@ -29,6 +29,7 @@ class Maze
             end
     end
 
+    # Determines is a given space is empty or not
     def empty?(location)
         if @grid[location[0]][location[1]] == " "
             true
@@ -36,6 +37,7 @@ class Maze
         end
     end
 
+    # Returns an array of all the spaces that are available
     def free_space
         spaces = []
         @grid.each_with_index do |row, idx|
@@ -49,6 +51,7 @@ class Maze
         spaces
     end
 
+    # Returns an array containing the location of the starting S
     def start_space
         location = []
         @grid.each_with_index do |row, idx|
@@ -64,6 +67,7 @@ class Maze
         location
     end
 
+    # Returns an array containing the location of the ending E
     def end_space
         location = []
         @grid.each_with_index do |row, idx|
@@ -77,6 +81,7 @@ class Maze
         location
     end
 
+    # Determines if the given maze is actually solvable
     def dead_end?
         over = [end_space[0] - 1, end_space[1]]
         under = [end_space[0] + 1, end_space[1]]
@@ -94,7 +99,7 @@ class Maze
             end
     end
 
-
+    # Places the X on the next chosen available space
     def take_step
         if @grid[$x][$y] != "E"
             @grid[$x][$y] = "X"
@@ -113,38 +118,46 @@ class Maze
         puts "You have escaped the Labyrinth!\n You are free, Minotaur!"
     end
 
+    # Places the X above the S or the last X
     def move_up
         $x -= 1
         take_step
     end
 
+    # Determines if the space above is a free space
     def up?
         free_space.include?([$x.to_i - 1, $y])
     end
 
+    # Places the X below the S or the last X
     def move_down
         $x += 1
         take_step
     end
 
+    # Determines if the space below is a free space
     def down?
         free_space.include?([$x.to_i + 1, $y])
     end
 
+    # Places the X to the right of the S or the last X
     def move_right
         $y += 1
         take_step
     end
 
+    # Determines if the space to the right is a free space
     def right?
         free_space.include?([$x, $y.to_i + 1])
     end
 
+    # Places the X to the left of the S or the last X
     def move_left
         $y -= 1
         take_step
     end
 
+    # Determines if the space to the left is a free space
     def left?
         free_space.include?([$x, $y.to_i - 1])
     end
