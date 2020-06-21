@@ -82,3 +82,10 @@ describe "Maze" do
             end
         end
 
+        describe "#end_reached" do
+            it "should print the maze solution and exit message" do
+                maze.end_space
+                expect { maze.end_reached }.to output(/You have escaped the Labyrinth!/).to_stdout
+            end
+        end
+
