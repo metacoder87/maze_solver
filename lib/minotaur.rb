@@ -207,7 +207,6 @@ Maze.new('tartarus.txt').path_finder
 # pick your own maze on the cmd line
 Maze.new.path_finder
 
-
             # meta_coder (Gary Miller) =)
             # gmiller052611@gmail.com
             # https://github.com/metacoder87/maze_solver

@@ -202,3 +202,8 @@ describe "Maze" do
         end
 
 end
+
+
+            # meta_coder (Gary Miller) =)
+            # gmiller052611@gmail.com
+            # https://github.com/metacoder87/maze_solver
