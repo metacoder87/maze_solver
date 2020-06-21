@@ -150,3 +150,17 @@ describe "Maze" do
                 expect(maze.up?).to be(false)
             end
         end
+
+        describe "#down?" do
+            it "should return true if the space below is free" do
+                maze.move_up
+                maze.move_right
+                expect(maze.down?).to be(true)
+            end
+
+            it "should return false if the space below is not free" do
+                maze.move_down
+                expect(maze.down?).to be(false)
+            end
+        end
+
