@@ -13,3 +13,11 @@ describe "Maze" do
             end
         end
 
+        describe "#gets_maze" do
+            it "should print, Enter the name of a text file" do
+                input = 'maze.txt'
+                allow(maze).to receive(:gets).and_return(input)
+                expect { maze.gets_maze }.to output(/Enter the name of a text file/).to_stdout
+            end
+        end
+
