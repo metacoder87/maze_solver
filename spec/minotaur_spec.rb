@@ -138,3 +138,15 @@ describe "Maze" do
             end
         end
 
+        describe "#up?" do
+            it "should return true if the space above is free" do
+                expect(maze.up?).to be(true)
+            end
+
+            it "should return false if the space above is not free" do
+                grid = maze.instance_variable_get(:@grid)
+                grid[5][1] = "X"
+                maze.start_space
+                expect(maze.up?).to be(false)
+            end
+        end
