@@ -189,3 +189,16 @@ describe "Maze" do
                 expect(maze.right?).to be(false)
             end
         end
+
+        describe "#path_finder" do
+            it "should find a path through the maze if there is one" do
+                expect { maze.path_finder }.to output(/You have escaped the Labyrinth!/).to_stdout
+            end
+
+            it "should tell you if there is no path to the maze exit" do
+                trap = Maze.new('trap.txt')
+                expect { trap.path_finder }.to output(/These things happen to Minotaurs sometimes./).to_stdout
+            end
+        end
+
+end
