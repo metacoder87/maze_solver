@@ -18,12 +18,14 @@ class Maze
         end
     end
 
+    # Asks the user for the maze they want solved
     def gets_maze
-        puts "Enter the name of a text file containing a maze, and prepare to be amazed!"
+        puts "Enter the name of a text file: maze, labyrinth, trap, tartarus\n 
+                and prepare to be AMAZED!"
         maze = gets.chomp.to_s
             if maze.include?(".txt")
                 maze
-            else maze + ".txt"
+            else maze + '.txt'
             end
     end
 
