@@ -65,3 +65,14 @@ describe "Maze" do
             end
         end
 
+        describe "#dead_end?" do
+            it "should return false if the maze has an exit" do
+                expect(maze.dead_end?).to be(false)
+            end
+
+            it "should return true if the maze has no exit" do
+                trap = Maze.new('trap.txt')
+                expect(trap.dead_end?).to be(true)
+            end
+        end
+
