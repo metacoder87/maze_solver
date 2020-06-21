@@ -53,3 +53,8 @@ describe "Maze" do
             end
         end
 
+        describe "#start_space" do
+            it "should return the location of the starting 'S'" do
+                expect(maze.start_space).to eq([6,1])
+            end
+        end
