@@ -116,3 +116,14 @@ describe "Maze" do
             end
         end
 
+        describe "#move_down" do
+            it "should place an X on the space below the S or last X" do
+                grid = maze.instance_variable_get(:@grid)
+                maze.move_down
+                expect(grid[4][4]).to eq("X")
+                maze.move_down
+                expect(grid[5][4]).to eq("X")
+                # grid.each { |line| puts line.join('') }
+            end
+        end
+
