@@ -21,3 +21,17 @@ describe "Maze" do
             end
         end
 
+        describe "#empty?" do
+            it "should return true if the given location is empty" do
+                expect(maze.empty?([5,1])).to be(true)
+                expect(maze.empty?([6,2])).to be(true)
+                expect(maze.empty?([4,9])).to be(true)
+            end
+
+            it "should return false if the location is not empty" do
+                expect(maze.empty?([6,1])).to be(false)
+                expect(maze.empty?([4,10])).to be(false)
+                expect(maze.empty?([0,7])).to be(false)
+            end
+        end
+
